@@ -1,0 +1,6 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
+<div style="color:pink;border:solid 1px pink;">
+<%
+	out.println("这里是include.tagf内容");
+%>
+</div>
