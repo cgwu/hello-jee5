@@ -24,6 +24,10 @@
 		<param-name>org.eclipse.jetty.servlet.SessionIdPathParameterName</param-name>
 		<param-value>sid</param-value>
 	</context-param>
+	
+	<listener>
+		<listener-class>com.cg.web.listeners.AppListener</listener-class>
+	</listener>
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
