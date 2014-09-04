@@ -6,7 +6,7 @@ public class MoreBasicThread {
 			// new Thread(new LiftOff()).start();
 			Thread t = new Thread(new LiftOff());
 			if (i == 4) {
-				t.setPriority(Thread.MIN_PRIORITY);
+				t.setPriority(Thread.MAX_PRIORITY);
 			}
 			t.start();
 			// t.join();
