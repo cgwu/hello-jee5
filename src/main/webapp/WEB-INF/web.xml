@@ -28,6 +28,13 @@
 	<listener>
 		<listener-class>com.cg.web.listeners.AppListener</listener-class>
 	</listener>
+	<listener>
+		<listener-class>com.cg.web.listeners.SessionListener</listener-class>
+	</listener>
+	<listener>
+		<!-- ServletRequestListener -->
+		<listener-class>com.cg.web.listeners.PerfStatListener</listener-class>
+	</listener>
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

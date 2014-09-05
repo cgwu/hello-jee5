@@ -11,13 +11,13 @@ public class AppListener implements ServletContextListener {
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
-		System.out.println("Servlet Context 停止!");
+		System.out.println("AppListener: Servlet Context 停止!");
 	}
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		ServletContext ctx = sce.getServletContext();
-		System.out.println("Servlet Context 启动!");
+		System.out.println("AppListener: Servlet Context 启动!");
 		
 		Map<String,String> countries = new HashMap<String,String>();
 		countries.put("ca", "Cananda");

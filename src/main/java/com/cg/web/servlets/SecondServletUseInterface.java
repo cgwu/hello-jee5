@@ -29,7 +29,7 @@ public class SecondServletUseInterface implements Servlet {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		this.servletConfig = config;
-		System.out.println("第二个Servlet inited...");
+		System.out.println("第二个 (Second) Servlet inited...");
 	}
 
 	@Override
