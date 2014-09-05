@@ -35,6 +35,16 @@
 		<!-- ServletRequestListener -->
 		<listener-class>com.cg.web.listeners.PerfStatListener</listener-class>
 	</listener>
+	<!-- ###################### Filters ######################### -->
+	<filter>
+		<filter-name>LogingFilter</filter-name>
+		<filter-class>com.cg.web.filters.LogingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LogingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
