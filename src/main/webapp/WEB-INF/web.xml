@@ -24,17 +24,19 @@
 		<param-name>org.eclipse.jetty.servlet.SessionIdPathParameterName</param-name>
 		<param-value>sid</param-value>
 	</context-param>
-	
+	<!-- ###################### Listeners ######################### -->
 	<listener>
 		<listener-class>com.cg.web.listeners.AppListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>com.cg.web.listeners.SessionListener</listener-class>
 	</listener>
+	<!-- ServletRequestListener -->
+	<!-- 
 	<listener>
-		<!-- ServletRequestListener -->
 		<listener-class>com.cg.web.listeners.PerfStatListener</listener-class>
 	</listener>
+	 -->
 	<!-- ###################### Filters ######################### -->
 	<filter>
 		<filter-name>LogingFilter</filter-name>
