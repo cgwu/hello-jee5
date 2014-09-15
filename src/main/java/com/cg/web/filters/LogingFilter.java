@@ -11,11 +11,22 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LogingFilter implements Filter {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
+
+public class LogingFilter implements Filter {
+	/* 方法一: 使用commons.logging */
+//	private static final Log log = LogFactory.getLog(LogingFilter.class);
+	/* 方法二: 使用slf4j(更好,参数支持{}格式化) */
+	private static final Logger log = LoggerFactory.getLogger( LogingFilter.class );
+	
 	@Override
 	public void init(FilterConfig config) throws ServletException {
-		System.out.println("LogingFilter init");
+//		System.out.println("LogingFilter init");
+		log.info("LogingFilter init");
 	}
 
 	@Override
@@ -25,14 +36,15 @@ public class LogingFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) rsp;
 		String url = request.getRequestURI();
-		if (!url.endsWith(".jsp")) {
-			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().write("暂时无法访问servlet,但可以访问jsp!");
-		} else {
+		log.info("开始请求(slf4j):{}", url);
+//		if (!url.endsWith(".jsp")) {
+//			response.setContentType("text/html;charset=utf-8");
+//			response.getWriter().write("暂时无法访问servlet,但可以访问jsp!");
+//		} else {
 			chain.doFilter(request, response);
 			System.out.println("## Filter过后的代码 ##");
 			response.setHeader("Server", "MyServer 1.0");
-		}
+//		}
 	}
 
 	@Override
