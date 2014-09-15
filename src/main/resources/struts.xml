@@ -11,4 +11,6 @@
 			<result>/index.jsp</result>
 		</action>
 	</package>
+	
+	<include file="struts/struts-test.xml" />
 </struts>
