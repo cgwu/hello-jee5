@@ -1,5 +1,7 @@
 package com.cg.web.listeners;
 
+import java.util.Date;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.http.HttpSessionEvent;
@@ -20,6 +22,8 @@ public class SessionListener implements HttpSessionListener, ServletContextListe
 	@Override
 	public void sessionCreated(HttpSessionEvent event) {
 		String id = event.getSession().getId();
+		//保存开始时间，用于测试
+		event.getSession().setAttribute("startTime", new Date());
 		System.out.println("sessionCreated:" + id);
 	}
 
