@@ -12,6 +12,6 @@
 <h4>your name </h4>
 <h4><s:property value="customGreeting"/></h4>
 
-<s:url  />
+<a href="<s:url action="nameInput" namespace="/struts/test" />" >输入名字</a>
 </body>
 </html>

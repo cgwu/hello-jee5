@@ -7,7 +7,7 @@
 	<session-config>
 		<session-timeout>30</session-timeout>
 		<!-- Servlet 3.0规范可以使用该配置,使session id在URL中,而不是使用cookie -->
-		<!-- <tracking-mode>URL</tracking-mode> -->
+		<tracking-mode>URL</tracking-mode>
 	</session-config>
 	<jsp-config>
 		<jsp-property-group>
