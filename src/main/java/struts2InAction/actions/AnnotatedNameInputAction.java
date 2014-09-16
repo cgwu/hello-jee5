@@ -8,6 +8,8 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @ParentPackage("struts-default")
 @Namespace("/struts/test")
@@ -16,6 +18,8 @@ import org.apache.struts2.convention.annotation.Results;
 	@Result(name = "INPUT", location = "/struts-test/annotated-name-input.jsp") 
 })
 public class AnnotatedNameInputAction {
+	private static final Logger log = LoggerFactory.getLogger( AnnotatedNameInputAction.class );
+	
 	private static final String GREETING = "(使用注解)你好:";
 
 	private String name;
@@ -24,6 +28,7 @@ public class AnnotatedNameInputAction {
 
 	@Action(value="annotatedNameInput")
 	public String execute() {
+		log.info("执行:{}", this);
 		if (StringUtils.isEmpty(name) || "123".equals(name)) {
 			return "INPUT";
 		}

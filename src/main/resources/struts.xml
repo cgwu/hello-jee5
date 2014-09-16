@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<constant name="struts.devMode" value="true" />
+	<!-- 为true时可直接访问action的方法,如: /annotatedNameInput!execute.action -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.action.extension" value="action,do,htm" />
 	<constant name="struts.configuration.xml.reload" value="true"/> 
 	<constant name="struts.serve.static.browserCache" value="false" /> 
 	<!-- <constant name="struts.ui.theme" value="simple" /> -->
 	
-	<package name="basicstruts2" extends="struts-default">
+	<package name="basicstruts2" extends="support">
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
