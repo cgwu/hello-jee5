@@ -6,6 +6,9 @@
 	<constant name="struts.devMode" value="true" />
 	<!-- 为true时可直接访问action的方法,如: /annotatedNameInput!execute.action -->
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- CodeBehind页面路径前缀 -->
+ 	<constant name="struts.codebehind.pathPrefix" value="/jsp/" />
+	<!-- Action后缀名 -->
 	<constant name="struts.action.extension" value="action,do,htm" />
 	<constant name="struts.configuration.xml.reload" value="true"/> 
 	<constant name="struts.serve.static.browserCache" value="false" /> 
