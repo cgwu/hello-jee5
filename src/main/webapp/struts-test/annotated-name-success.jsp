@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>输入你的名字</title>
+<title>你的名字</title>
 </head>
 <body>
 
-<h4>Enter your name </h4>
-<s:form action="nameSuccess" namespace="/struts/test" >
-<s:textfield name="name" label="你的名字"/>
-<s:textfield name="score" label="分数"/>
-<s:submit/>
-</s:form>
+<h4>your name </h4>
+<h4><s:property value="customGreeting"/></h4>
 
+<h4>${customGreeting }</h4>
+
+<hr>
+<a href="<s:url action="annotatedName" namespace="/struts/test" />" >输入名字</a>
 </body>
 </html>

@@ -4,7 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>		
 	<package name="strutsTest" namespace="/struts/test" extends="struts-default">
-		<action name="nameSuccess" class="struts2InAction.NameInputAction">
+		<action name="nameSuccess" class="struts2InAction.actions.NameInputAction">
 		    <result name="SUCCESS">/struts-test/name-success.jsp</result>
 		    <result name="INPUT">/struts-test/name-input.jsp</result>
 		</action>

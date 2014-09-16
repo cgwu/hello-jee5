@@ -9,8 +9,8 @@
 </head>
 <body>
 
-<h4>Enter your name </h4>
-<s:form action="nameSuccess" namespace="/struts/test" >
+<h4>Enter your name(注解方式) </h4>
+<s:form action="annotatedNameInput" namespace="/struts/test" >
 <s:textfield name="name" label="你的名字"/>
 <s:textfield name="score" label="分数"/>
 <s:submit/>
