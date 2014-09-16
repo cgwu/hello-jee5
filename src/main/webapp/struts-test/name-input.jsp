@@ -10,7 +10,7 @@
 <body>
 
 <h4>Enter your name </h4>
-<s:form action="nameSuccess" namespace="/struts/test">
+<s:form action="nameSuccess" namespace="/struts/test" >
 <s:textfield name="name" label="你的名字"/>
 <s:submit/>
 </s:form>
