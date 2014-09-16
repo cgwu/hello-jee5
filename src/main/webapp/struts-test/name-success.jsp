@@ -12,5 +12,6 @@
 <h4>your name </h4>
 <h4><s:property value="customGreeting"/></h4>
 
+<s:url  />
 </body>
 </html>
