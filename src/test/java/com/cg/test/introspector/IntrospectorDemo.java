@@ -1,4 +1,6 @@
 /*
+From: http://www.tuicool.com/articles/AbUfIn
+
 JavaBean与内省(Introspector):
 1.JavaBean是一种特殊的Java类,主要用于传递数据信息,这种Java类中的方法
    主要用于访问私有字段,且方法名符合某种命名规则.

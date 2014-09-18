@@ -13,7 +13,7 @@
 		</action>
 	</package>
 	
-	<package name="system.user" namespace="/system/user" extends="struts-default">
+	<package name="system.user" namespace="/system/user" extends="support">
 		<action name="*" class="struts2InAction.actions.UserAction" method="{1}"></action>
 	</package>
 </struts>
