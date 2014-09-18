@@ -6,7 +6,7 @@
 	<constant name="struts.devMode" value="true" />
 	<!-- 为true时可直接访问action的方法,如: /annotatedNameInput!execute.action -->
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
-	<!-- CodeBehind页面路径前缀 -->
+	<!-- CodeBehind页面路径前缀,已经不建议使用,最好用Convention Plugin代替 -->
  	<constant name="struts.codebehind.pathPrefix" value="/jsp/" />
 	<!-- Action后缀名 -->
 	<constant name="struts.action.extension" value="action,do,htm" />
@@ -14,6 +14,13 @@
 	<constant name="struts.serve.static.browserCache" value="false" /> 
 	<!-- <constant name="struts.ui.theme" value="simple" /> -->
 	
+	<!-- Convention Plugin -->
+	<constant name="struts.convention.result.path" value="/jsp/"/>
+	<!-- 
+	<constant name="struts.convention.action.suffix" value="Action"/>
+	<constant name="struts.convention.action.mapAllMatches" value="true"/>
+	<constant name="struts.convention.default.parent.package" value="rest-default"/>
+	 -->
 	<package name="basicstruts2" extends="support">
 		<action name="index">
 			<result>/index.jsp</result>
