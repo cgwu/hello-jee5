@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/sitemesh/decorators">
+	<!-- main  -->
+	<decorator name="main" page="main.jsp">
+		<pattern>*.htm</pattern>
+		<pattern>/system/*/*.action</pattern>
+	</decorator>
+	<!-- report  -->
+	<!-- 
+	<decorator name="system_report" page="report.jsp">
+		<pattern>/report/*.action</pattern>
+		<pattern>/system/report/*.action</pattern>
+	</decorator>
+	 -->
+</decorators>

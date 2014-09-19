@@ -10,5 +10,6 @@
     default-autowire="no" default-lazy-init="false">
  
  	<bean id="userService" class="struts2InAction.services.UserService" />
+ 	<bean name="sitemeshFilterBean" class="com.opensymphony.sitemesh.webapp.SiteMeshFilter" />
  </beans>
  
