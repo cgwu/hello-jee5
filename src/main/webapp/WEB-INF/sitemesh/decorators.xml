@@ -2,7 +2,8 @@
 <decorators defaultdir="/WEB-INF/sitemesh/decorators">
 	<!-- main  -->
 	<decorator name="main" page="main.jsp">
-		<pattern>*.htm</pattern>
+		<pattern>/system/*/*.htm</pattern>
+		<pattern>/system/*/*.do</pattern>
 		<pattern>/system/*/*.action</pattern>
 	</decorator>
 	<!-- report  -->

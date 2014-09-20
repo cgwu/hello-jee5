@@ -3,7 +3,7 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>		
-	<package name="strutsTest" namespace="/struts/test" extends="struts-default">
+	<package name="strutsTest" namespace="/struts/test" extends="default">
 		<action name="nameSuccess" class="struts2InAction.actions.NameInputAction">
 		    <result name="SUCCESS">/struts-test/name-success.jsp</result>
 		    <result name="INPUT">/struts-test/name-input.jsp</result>
@@ -13,7 +13,7 @@
 		</action>
 	</package>
 	
-	<package name="system.user" namespace="/system/user" extends="support">
+	<package name="system.user" namespace="/system/user" extends="default">
 		<action name="*" class="struts2InAction.actions.UserAction" method="{1}"></action>
 	</package>
 </struts>

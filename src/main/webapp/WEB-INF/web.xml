@@ -30,6 +30,7 @@
     </context-param>
 
 	<!-- ###################### Filters ######################### -->
+	<!-- 
 	<filter>
 		<filter-name>LogingFilter</filter-name>
 		<filter-class>com.cg.web.filters.LogingFilter</filter-class>
@@ -41,6 +42,7 @@
 		<url-pattern>*.do</url-pattern>
 		<url-pattern>*.jsp</url-pattern>
 	</filter-mapping>
+	 -->
 	<!-- 
 	<filter>
 	    <filter-name>sitemesh</filter-name>

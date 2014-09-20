@@ -3,6 +3,34 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	 <package name="support" extends="struts-default" abstract="true">
-	 </package>
+	<package name="default" extends="struts-default" abstract="true">
+	 	<!-- 
+	 	<result-types>
+    		<result-type name="json" class="org.framework.support.struts.result.JSONResult" />
+    		<result-type name="freemarkerStream" class="org.framework.support.struts.result.FreemarkerStreamResult" />
+    	</result-types>
+    	 -->    	
+    	<interceptors>
+	    	<interceptor name="myTimer" class="struts2InAction.interceptors.MyTimerInterceptor" />
+	    	<interceptor-stack name="myStrutsStack">
+		    	<interceptor-ref name="myTimer"></interceptor-ref>
+		    	<interceptor-ref name="defaultStack"></interceptor-ref>
+	    	</interceptor-stack>
+    	</interceptors>
+    	
+    	<default-interceptor-ref name="myStrutsStack"/>
+    	
+		<global-results>
+			<result name="list" type="redirect">list.action</result>
+			<result name="error">/jsp/error/index.jsp</result>
+			<!-- 
+			<result name="json" type="json">
+				<param name="root">rsp</param>
+			</result>
+			 -->
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+	</package>
 </struts>

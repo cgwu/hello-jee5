@@ -21,7 +21,7 @@
 	<constant name="struts.convention.action.suffix" value="Action"/>
 	<constant name="struts.convention.default.parent.package" value="rest-default"/>
 	 -->
-	<package name="basicstruts2" extends="support">
+	<package name="basicstruts2" extends="default">
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
