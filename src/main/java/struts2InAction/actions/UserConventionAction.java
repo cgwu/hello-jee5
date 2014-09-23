@@ -22,6 +22,8 @@ public class UserConventionAction extends ActionSupport implements SessionAware 
 	
 	private transient UserService userService;
 	
+	private String name;
+	
 	private Map<String, Object> session;
 	
 	@Action("list")
@@ -35,7 +37,7 @@ public class UserConventionAction extends ActionSupport implements SessionAware 
 	@Action("add")
 	public String add() {
 		log.info("调用add()");
-		userService.add("张三");
+		userService.add(name);
 		return "add";
 	}
 
@@ -46,5 +48,13 @@ public class UserConventionAction extends ActionSupport implements SessionAware 
 	@Override
 	public void setSession(Map<String, Object> map) {
 		session = map;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }
