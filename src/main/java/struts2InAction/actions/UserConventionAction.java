@@ -18,7 +18,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UserConventionAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = -4159835456809010085L;
 	
-	private static final Logger log = LoggerFactory.getLogger( LogingFilter.class );
+	private static final Logger log = LoggerFactory.getLogger( UserConventionAction.class );
 	
 	private transient UserService userService;
 	

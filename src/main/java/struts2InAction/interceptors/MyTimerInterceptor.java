@@ -15,7 +15,7 @@ public class MyTimerInterceptor extends AbstractInterceptor {
 		long startTime = System.currentTimeMillis();
 		String result = invocation.invoke();
 		long executionTime = System.currentTimeMillis() - startTime;
-		log.info("执行Action时间: {} 毫秒", executionTime);
+		log.trace("执行Action时间: {} 毫秒", executionTime);
 		return result;
 	}
 

@@ -21,7 +21,6 @@
     	<default-interceptor-ref name="myStrutsStack"/>
     	
 		<global-results>
-			<result name="list" type="redirect">list.action</result>
 			<result name="error">/jsp/error/index.jsp</result>
 			<!-- 
 			<result name="json" type="json">

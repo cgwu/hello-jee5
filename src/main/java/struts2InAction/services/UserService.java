@@ -1,6 +1,7 @@
 package struts2InAction.services;
 
 public class UserService {
+	
 	public void add(String name) {
 		System.out.println("增加用户:" + name);
 	}

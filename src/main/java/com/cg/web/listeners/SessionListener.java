@@ -7,8 +7,12 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-public class SessionListener implements HttpSessionListener, ServletContextListener {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+public class SessionListener implements HttpSessionListener, ServletContextListener {
+	private static final Logger log = LoggerFactory.getLogger( SessionListener.class );
+	
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
 		System.out.println("contextInitialized");
@@ -24,7 +28,7 @@ public class SessionListener implements HttpSessionListener, ServletContextListe
 		String id = event.getSession().getId();
 		//保存开始时间，用于测试
 		event.getSession().setAttribute("startTime", new Date());
-		System.out.println("sessionCreated:" + id);
+		log.trace("sessionCreated:", id);
 	}
 
 	@Override
