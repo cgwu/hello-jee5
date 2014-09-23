@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import springInAction.actions.system.AdminLoginAction;
 import springInAction.beans.ClientService;
 import springInAction.beans.GreetingService;
 import struts2InAction.services.UserService;
@@ -33,12 +34,14 @@ public class GreetingServiceTest {
 		userService.Add("张三");
 		
 		System.out.println("----------------");
-
 		BasicDataSource dataSource = ctx.getBean("dataSource",BasicDataSource.class);
 		System.out.println(dataSource.getDriverClassName());
 		System.out.println(dataSource.getUsername());
 		System.out.println(dataSource.getPassword());
 		
+		System.out.println("----------------");
+		AdminLoginAction adminLogin = ctx.getBean("system.adminLoginAction",AdminLoginAction.class);
+		adminLogin.login();
 	}
 
 }
