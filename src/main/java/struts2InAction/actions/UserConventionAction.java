@@ -28,6 +28,7 @@ public class UserConventionAction extends ActionSupport implements SessionAware 
 	public String list() {
 		log.info("调用list()");
 		session.put("startTime", new Date());
+		userService.list();
 		return "list";
 	}
 	
