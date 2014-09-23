@@ -14,7 +14,7 @@ public class UserAction extends ActionSupport {
 	}
 
 	public String add() {
-		userService.Add("张三");
+		userService.add("张三");
 		return "add";
 	}
 

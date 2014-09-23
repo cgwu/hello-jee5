@@ -35,7 +35,7 @@ public class UserConventionAction extends ActionSupport implements SessionAware 
 	@Action("add")
 	public String add() {
 		log.info("调用add()");
-		userService.Add("张三");
+		userService.add("张三");
 		return "add";
 	}
 

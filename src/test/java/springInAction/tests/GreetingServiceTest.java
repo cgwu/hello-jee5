@@ -31,7 +31,7 @@ public class GreetingServiceTest {
 		
 		System.out.println("----------------");
 		UserService userService = ctx.getBean("userService",UserService.class);
-		userService.Add("张三");
+		userService.add("张三");
 		
 		System.out.println("----------------");
 		BasicDataSource dataSource = ctx.getBean("dataSource",BasicDataSource.class);

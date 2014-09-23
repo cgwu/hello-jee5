@@ -28,7 +28,7 @@
 
 	<!-- for all other loggers log only info and above log messages -->
 	<root>
-		<priority value="TRACE" />
+		<priority value="INFO" />
 		<appender-ref ref="STDOUT" />
 	</root>
 
