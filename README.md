@@ -1,7 +1,10 @@
 hello-jee5
 ==========
+java EE 5 test project
+
 Build Command:
 mvn clean package -Dmaven.test.skip
 
-java ee 5 test project
-java ee 5 测试项目
+start-cgdb.bat
+cd ..\data
+@java -classpath ../lib/hsqldb.jar org.hsqldb.server.Server --database.1 file:cgdb --dbname.1 cgdb

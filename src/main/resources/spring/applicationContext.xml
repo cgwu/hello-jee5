@@ -32,8 +32,39 @@
 		<property name="maxIdle" value="${dataSource.maxIdle}" />
 		<property name="minIdle" value="${dataSource.minIdle}" />
 		<property name="maxWait" value="${dataSource.maxWait}" />
+		<!-- 
 		<property name="testWhileIdle" value="true" />
 		<property name="validationQuery" value="select 1"/>
+		 -->
+	</bean>
+	<!--Hibernate SessionFatory-->	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="hibernateProperties">
+			<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+				<property name="locations">
+					<list>
+						<value>classpath:hibernate.properties</value>
+						<!-- <value>classpath:memcached.properties</value> -->
+					</list>
+				</property>
+			</bean>
+		</property>
+		<property name="mappingLocations" value="classpath*:hibernate/*.hbm.xml" />
+	</bean>
+	
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<!-- 
+	<bean id="genericHibernateDao" class="com.cg.support.hibernate.GenericHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	 -->
+	<!-- TransactionManager -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
 	<context:component-scan base-package="springInAction.actions" 
@@ -54,7 +85,7 @@
 	<aop:aspectj-autoproxy />
 	
 	<!-- 支持 @Transactional 标记 -->
-<!-- 	<tx:annotation-driven /> -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	<context:annotation-config />
  </beans>

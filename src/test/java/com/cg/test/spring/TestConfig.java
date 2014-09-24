@@ -18,11 +18,12 @@ import struts2InAction.services.UserService;
 @WebAppConfiguration
 public class TestConfig extends AbstractJUnit4SpringContextTests {
 
-	private static final Logger log = LoggerFactory.getLogger(TestConfig.class);
+//	private static final Logger log = LoggerFactory.getLogger(TestConfig.class);
 	
 	@Autowired
 	protected WebApplicationContext wac;
 	
+	/*
 	@Autowired
 	private UserService userService;
 	
@@ -34,4 +35,5 @@ public class TestConfig extends AbstractJUnit4SpringContextTests {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
+	*/
 }
