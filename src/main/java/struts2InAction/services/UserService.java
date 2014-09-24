@@ -1,7 +1,7 @@
 package struts2InAction.services;
 
 public class UserService {
-	
+
 	public void add(String name) {
 		System.out.println("增加用户:" + name);
 	}
@@ -12,5 +12,9 @@ public class UserService {
 
 	public void list() {
 		System.out.println("列出用户");
+	}
+
+	public String sayHi(String name) {
+		return "你好:" + name;
 	}
 }

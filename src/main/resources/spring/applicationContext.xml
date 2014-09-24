@@ -45,6 +45,7 @@
 	<bean id="beforeAspect" class="springInAction.aop.BeforeAspectExample" />
 	<bean id="afterAspect" class="springInAction.aop.AfterAspectExample" />
 	<bean id="aroundAspect" class="springInAction.aop.AroundAspectExample"/>
+	<bean id="logingAspect" class="springInAction.aop.LogingAspect" />
  
  	<bean id="userService" class="struts2InAction.services.UserService" />
 

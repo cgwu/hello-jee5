@@ -5,7 +5,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
 
 @Aspect
-@Order(-1)
+@Order(7)
 public class BeforeAspectExample {
 
 	@Before("execution(* struts2InAction.services.*Service.*(..)) && args(name,..)")

@@ -17,15 +17,15 @@ import com.opensymphony.xwork2.ActionSupport;
 @Namespace("/system/convention")
 public class UserConventionAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = -4159835456809010085L;
-	
-	private static final Logger log = LoggerFactory.getLogger( UserConventionAction.class );
-	
+
+	private static final Logger log = LoggerFactory.getLogger(UserConventionAction.class);
+
 	private transient UserService userService;
-	
+
 	private String name;
-	
+
 	private Map<String, Object> session;
-	
+
 	@Action("list")
 	public String list() {
 		log.info("调用list()");
@@ -33,11 +33,13 @@ public class UserConventionAction extends ActionSupport implements SessionAware 
 		userService.list();
 		return "list";
 	}
-	
+
 	@Action("add")
 	public String add() {
-		log.info("调用add()");
-		userService.add(name);
+		// log.info("调用add()");
+		// userService.add(name);
+		String hi = userService.sayHi(name);
+		log.info("方法调用结果:{}", hi);
 		return "add";
 	}
 
