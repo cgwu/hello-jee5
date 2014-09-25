@@ -88,5 +88,8 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	<context:annotation-config />
+	
+	<!-- Dao -->
+	<bean id="eventService" class="org.hibernate.tutorial.services.EventService" />
  </beans>
  

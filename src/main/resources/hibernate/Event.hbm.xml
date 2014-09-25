@@ -9,7 +9,7 @@
 			<generator class="identity" />
 		</id>
 		<property name="date" type="timestamp" column="EVENT_DATE" />
-		<property name="title" />
+		<property name="title" not-null="true"/>
 	</class>
 
 </hibernate-mapping>
