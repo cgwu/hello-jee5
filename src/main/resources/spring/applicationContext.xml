@@ -71,15 +71,6 @@
 		name-generator="com.cg.support.spring.ActionBeanNameGenerator">
 		<context:include-filter type="regex" expression=".*Action"/>
 	</context:component-scan>
-	
-	<bean id="myAspect" class="springInAction.aop.NotVeryUsefulAspect" />
-	<bean id="beforeAspect" class="springInAction.aop.BeforeAspectExample" />
-	<bean id="afterAspect" class="springInAction.aop.AfterAspectExample" />
-	<bean id="aroundAspect" class="springInAction.aop.AroundAspectExample"/>
-	<bean id="logingAspect" class="springInAction.aop.LogingAspect" />
- 
- 	<bean id="userService" class="struts2InAction.services.UserService" />
-
  	
  	<!-- 支持 @AspectJ 标记-->
 	<aop:aspectj-autoproxy />
@@ -88,6 +79,42 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	<context:annotation-config />
+	
+	<!-- i18n -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>i18n/constant</value>
+				<value>i18n/jsp_common</value>
+			</list>
+		</property>
+		<property name="useCodeAsDefaultMessage" value="true"/>
+	</bean>
+	<!-- 1. 基于session -->
+	<!-- <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/> -->
+	 <!-- 2. 基于请求头,需要继承 -->
+	<!-- <bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver"/> -->
+	 <!-- 3.基于cookie -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="defaultLocale" value="en"/>
+		<property name="cookieName" value="locale"/>
+	</bean>
+	<!-- 定义本地化变更拦截器 -->
+	<!-- 
+ 	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+ 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="order" value="0" />
+		<property name="interceptors" ref="localeChangeInterceptor" />
+	</bean>
+	 -->
+	<bean id="myAspect" class="springInAction.aop.NotVeryUsefulAspect" />
+	<bean id="beforeAspect" class="springInAction.aop.BeforeAspectExample" />
+	<bean id="afterAspect" class="springInAction.aop.AfterAspectExample" />
+	<bean id="aroundAspect" class="springInAction.aop.AroundAspectExample"/>
+	<bean id="logingAspect" class="springInAction.aop.LogingAspect" />
+ 
+ 	<bean id="userService" class="struts2InAction.services.UserService" />
+	
 	
 	<!-- Dao -->
 	<bean id="eventService" class="org.hibernate.tutorial.services.EventService" />
