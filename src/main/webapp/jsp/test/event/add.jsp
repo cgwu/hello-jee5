@@ -46,7 +46,7 @@ out.println(_localeAsString);
 <br>
 <h1>中英文测试</h1>
 <h4><spring:message code="lang" /></h4>
-<h4><spring:message code="jsp.common.header" /></h4>
+<%-- <h4><spring:message code="jsp.common.header" /></h4> --%>
 <a href="/test/event/add.htm?locale=en">English</a>
 <a href="/test/event/add.htm?locale=zh_CN">中文</a>
 

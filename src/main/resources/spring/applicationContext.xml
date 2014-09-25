@@ -92,11 +92,11 @@
 	</bean>
 	<!-- 1. 基于session -->
 	<!-- <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/> -->
-	 <!-- 2. 基于请求头,需要继承 -->
+	<!-- 2. 基于请求头,需要继承 -->
 	<!-- <bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver"/> -->
-	 <!-- 3.基于cookie -->
+	<!-- 3.基于cookie -->
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-		<property name="defaultLocale" value="en"/>
+		<property name="defaultLocale" value="zh_CN"/>
 		<property name="cookieName" value="locale"/>
 	</bean>
 	<!-- 定义本地化变更拦截器 -->
@@ -115,6 +115,8 @@
  
  	<bean id="userService" class="struts2InAction.services.UserService" />
 	
+ 	<!-- Filter bean -->
+ 	<bean id="logingFilter" class="com.cg.web.filters.LogingFilter" />
 	
 	<!-- Dao -->
 	<bean id="eventService" class="org.hibernate.tutorial.services.EventService" />
