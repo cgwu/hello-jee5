@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sp" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
@@ -31,17 +31,17 @@
     </head>
     <body>
         <h1>Hello World!这是我的SSH测试项目.</h1>
-        当前语言: ${requestScope.currentLocale }
+        当前语言: <b>${requestScope.currentLocale }</b>
         <br>
         
-        <spring:message code="lang" />:
+        <sp:message code="lang" />:
         <select id="language">
         <c:forEach var="locale" items="${supportLocales}">
         	<option value="${locale }" <c:if test="${locale eq requestScope.currentLocale.toString()}">selected="selected"</c:if> >
-        		<spring:message code="${locale }"/></option>
+        		<sp:message code="${locale }"/></option>
         </c:forEach>
         </select>
         
-        <spring:message code="jsp.fmt.test" arguments="张三,李四" />
+        <sp:message code="jsp.fmt.test" arguments="张三,李四" />
     </body>
 </html>
