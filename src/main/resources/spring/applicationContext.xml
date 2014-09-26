@@ -10,9 +10,7 @@
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
     " default-autowire="no" default-lazy-init="false">
-    
-    <bean name="sitemeshFilterBean" class="com.opensymphony.sitemesh.webapp.SiteMeshFilter" />
-    
+
     <!-- 属性文件读入 -->
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
@@ -96,8 +94,10 @@
 	<!-- <bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver"/> -->
 	<!-- 3.基于cookie -->
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-		<property name="defaultLocale" value="zh_CN"/>
-		<property name="cookieName" value="locale"/>
+		<!-- <property name="defaultLocale" value="zh_CN"/> -->
+		<property name="cookieName" value="LOCALE"/>
+		<!--单位秒: 60*60*24*30秒=2592000(1月) -->
+		<property name="cookieMaxAge" value="2592000" />
 	</bean>
 	<!-- 定义本地化变更拦截器 -->
 	<!-- 
@@ -115,8 +115,10 @@
  
  	<bean id="userService" class="struts2InAction.services.UserService" />
 	
- 	<!-- Filter bean -->
- 	<bean id="logingFilter" class="com.cg.web.filters.LogingFilter" />
+ 	<!-- Filter Beans -->
+ 	<!-- <bean id="logingFilter" class="com.cg.web.filters.LogingFilter" /> -->
+ 	<bean id="preRequestFilter" class="com.cg.web.filters.PreRequestFilter" />
+ 	<bean id="sitemeshFilter" class="com.opensymphony.sitemesh.webapp.SiteMeshFilter" />
 	
 	<!-- Dao -->
 	<bean id="eventService" class="org.hibernate.tutorial.services.EventService" />
