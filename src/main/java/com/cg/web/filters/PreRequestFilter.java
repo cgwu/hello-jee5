@@ -1,6 +1,7 @@
 package com.cg.web.filters;
 
 import java.io.IOException;
+import java.util.Locale;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 /**
  * @author spark
@@ -28,12 +30,15 @@ public class PreRequestFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse rsp, FilterChain chain)
 			throws IOException, ServletException {
-//		HttpServletRequest httpRequest = (HttpServletRequest) req;
+		HttpServletRequest httpRequest = (HttpServletRequest) req;
 		HttpServletResponse httpResponse = (HttpServletResponse) rsp;
 		
 		addNoCacheHeader(httpResponse);
 		// Spring LocalResolver
 		req.setAttribute(DispatcherServlet.LOCALE_RESOLVER_ATTRIBUTE,localeResolver);
+		
+		Locale currentLocale = RequestContextUtils.getLocale(httpRequest);
+		req.setAttribute("currentLocale", currentLocale);
 		
 		chain.doFilter(req, rsp);
 	}

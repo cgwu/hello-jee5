@@ -55,6 +55,7 @@ public class SetLocaleServlet extends HttpServlet {
 				supportLocales.add(StringUtils.trim(locale));
 			}
 		}
+		this.getServletContext().setAttribute("supportLocales", supportLocales);
 		if (logger.isInfoEnabled())
 			logger.info("support locales: " + locales);
 	}
