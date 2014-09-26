@@ -148,6 +148,19 @@
 	 
 	<!-- ###################### Servlets ######################### -->
 	<servlet>
+		<servlet-name>setLocaleServlet</servlet-name>
+		<servlet-class>com.cg.web.servlets.SetLocaleServlet</servlet-class>
+		<init-param>
+			<param-name>supportLocales</param-name>
+			<param-value>en,zh_CN</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>setLocaleServlet</servlet-name>
+		<url-pattern>/setLocale</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>MyServlet</servlet-name>
 		<servlet-class>com.cg.web.servlets.MyServlet</servlet-class>
 	</servlet>
