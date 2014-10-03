@@ -15,6 +15,7 @@
 		<struts.version>2.3.16.3</struts.version>
    		<hibernate.version>3.6.10.Final</hibernate.version>
    		<spring.version>3.2.11.RELEASE</spring.version>
+   		<jetty.version>8.1.15.v20140411</jetty.version>
 	</properties>
 
 	<dependencies>
@@ -181,7 +182,15 @@
 			<artifactId>jtds</artifactId>
 			<version>1.2.8</version>
 		</dependency>
-		
+		<!-- 
+		Embedding Jetty时使用此jar
+		<dependency>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-all-server</artifactId>
+			<version>${jetty.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		 -->
 		<!-- 此版本已经过时,使用commons-lang3.x.jar
 		<dependency>
 			<groupId>commons-lang</groupId>
