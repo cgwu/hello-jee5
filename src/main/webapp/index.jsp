@@ -31,14 +31,13 @@
     </head>
     <body>
         <h1>Hello World!这是我的SSH测试项目.</h1>
-        当前语言: <b>${requestScope.currentLocale }</b>
+        当前语言代码: <b>${requestScope.currentLocale }</b>
         <br>
-        
-        <sp:message code="lang" />:
+        <sp:message code="lang" />:<br>
         <select id="language">
         <c:forEach var="locale" items="${supportLocales}">
         	<option value="${locale }" <c:if test="${locale eq requestScope.currentLocale.toString()}">selected="selected"</c:if> >
-        		<sp:message code="${locale }"/></option>
+        		<sp:message code="lang.${locale }"/></option>
         </c:forEach>
         </select>
         
