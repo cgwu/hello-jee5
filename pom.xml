@@ -12,7 +12,7 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<struts.version>2.3.16.3</struts.version>
+		<struts.version>2.3.16</struts.version>
    		<hibernate.version>3.6.10.Final</hibernate.version>
    		<spring.version>3.2.11.RELEASE</spring.version>
    		<jetty.version>8.1.15.v20140411</jetty.version>
@@ -143,6 +143,19 @@
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- <dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>${jetty.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jsp</artifactId>
+			<version>${jetty.version}</version>
+			<scope>compile</scope>
+		</dependency> -->
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -183,17 +196,17 @@
 			<version>1.2.8</version>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
             <version>${jetty.version}</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-websocket</artifactId>
             <version>${jetty.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
 		<!-- 
 		Embedding Jetty时使用此jar

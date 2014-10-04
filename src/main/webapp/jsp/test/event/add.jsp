@@ -9,7 +9,7 @@
 <h1>event add</h1>
 <h4>${msg}</h4>
 
-<form action="/test/event/add.htm" method="post">
+<form action="add.htm" method="post">
 <input name="post" type="hidden" value="true" />
 <table>
 	<tr>

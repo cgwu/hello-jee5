@@ -106,12 +106,10 @@
 	<filter>
 		<filter-name>struts2</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
-		<!-- 
-		<init-param>
+		<!-- <init-param>
 			<param-name>actionPackages</param-name>
 			<param-value>struts2InAction.actions</param-value>
-		</init-param>
-		 -->
+		</init-param> -->
 	</filter>
 	<filter-mapping>
 		<filter-name>struts2</filter-name>

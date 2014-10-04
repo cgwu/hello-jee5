@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configure class="org.eclipse.jetty.server.Server" id="Server"><!--Thread 
+		Pool -->
+	<Set name="ThreadPool">
+		<New class="org.eclipse.jetty.util.thread.QueuedThreadPool">
+			<Set name="minThreads">1</Set>
+			<Set name="detailedDump">false</Set>
+		</New>
+	</Set><!--HTTP Connector -->
+	<Call name="addConnector">
+		<Arg>
+			<New class="org.eclipse.jetty.server.nio.SelectChannelConnector">
+				<Set name="port">8080</Set>
+				<Set name="maxIdleTime">300000</Set>
+				<Set name="statsOn">false</Set>
+				<Set name="lowResourcesConnections">5000</Set>
+				<Set name="lowResourcesMaxIdleTime">5000</Set>
+			</New>
+		</Arg>
+	</Call><!--Handler -->
+	<Set name="handler">
+		<New class="org.eclipse.jetty.webapp.WebAppContext">
+			<Arg type="java.lang.String">D:\Workspace\_EclipseKepler\hello-jee5\src\main\webapp</Arg>
+			<Arg type="java.lang.String">/</Arg>
+			<Set name="defaultsDescriptor">C:\Users\cg\AppData\Local\Temp\eclipseJettyPlugin.webDefaults.hello_jee5_jetty.xml</Set>
+			<Set name="configurationClasses">
+				<Array type="java.lang.String">
+					<Item>org.eclipse.jetty.webapp.WebInfConfiguration</Item>
+					<Item>org.eclipse.jetty.webapp.WebXmlConfiguration</Item>
+					<Item>org.eclipse.jetty.webapp.MetaInfConfiguration</Item>
+					<Item>org.eclipse.jetty.webapp.FragmentConfiguration</Item>
+					<Item>net.sourceforge.eclipsejetty.starter.jetty8.ExtendedAnnotationConfiguration</Item>
+					<Item>org.eclipse.jetty.webapp.JettyWebXmlConfiguration</Item>
+				</Array>
+			</Set>
+			<Set name="extraClasspath">D:/Workspace/_EclipseKepler/hello-jee5/target/test-classes;D:/Workspace/_EclipseKepler/hello-jee5/target/classes;C:/_MavenLocalRepository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar;C:/_MavenLocalRepository/log4j/log4j/1.2.17/log4j-1.2.17.jar;C:/_MavenLocalRepository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar;C:/_MavenLocalRepository/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar;C:/_MavenLocalRepository/org/apache/struts/struts2-core/2.3.16.3/struts2-core-2.3.16.3.jar;C:/_MavenLocalRepository/org/apache/struts/xwork/xwork-core/2.3.16.3/xwork-core-2.3.16.3.jar;C:/_MavenLocalRepository/asm/asm/3.3/asm-3.3.jar;C:/_MavenLocalRepository/asm/asm-commons/3.3/asm-commons-3.3.jar;C:/_MavenLocalRepository/asm/asm-tree/3.3/asm-tree-3.3.jar;C:/_MavenLocalRepository/org/freemarker/freemarker/2.3.19/freemarker-2.3.19.jar;C:/_MavenLocalRepository/ognl/ognl/3.0.6/ognl-3.0.6.jar;C:/_MavenLocalRepository/javassist/javassist/3.11.0.GA/javassist-3.11.0.GA.jar;C:/_MavenLocalRepository/commons-fileupload/commons-fileupload/1.3.1/commons-fileupload-1.3.1.jar;C:/_MavenLocalRepository/commons-io/commons-io/2.2/commons-io-2.2.jar;C:/_MavenLocalRepository/org/apache/struts/struts2-convention-plugin/2.3.16.3/struts2-convention-plugin-2.3.16.3.jar;C:/_MavenLocalRepository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar;C:/_MavenLocalRepository/org/apache/struts/struts2-sitemesh-plugin/2.3.16.3/struts2-sitemesh-plugin-2.3.16.3.jar;C:/_MavenLocalRepository/opensymphony/sitemesh/2.4.2/sitemesh-2.4.2.jar;C:/_MavenLocalRepository/org/apache/struts/struts2-spring-plugin/2.3.16.3/struts2-spring-plugin-2.3.16.3.jar;C:/_MavenLocalRepository/org/springframework/spring-core/3.2.11.RELEASE/spring-core-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/springframework/spring-beans/3.2.11.RELEASE/spring-beans-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/springframework/spring-context/3.2.11.RELEASE/spring-context-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/springframework/spring-aop/3.2.11.RELEASE/spring-aop-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar;C:/_MavenLocalRepository/org/springframework/spring-jdbc/3.2.11.RELEASE/spring-jdbc-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/springframework/spring-tx/3.2.11.RELEASE/spring-tx-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/springframework/spring-expression/3.2.11.RELEASE/spring-expression-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/springframework/spring-web/3.2.11.RELEASE/spring-web-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/springframework/spring-webmvc/3.2.11.RELEASE/spring-webmvc-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/aspectj/aspectjweaver/1.8.2/aspectjweaver-1.8.2.jar;C:/_MavenLocalRepository/org/springframework/spring-orm/3.2.11.RELEASE/spring-orm-3.2.11.RELEASE.jar;C:/_MavenLocalRepository/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final.jar;C:/_MavenLocalRepository/antlr/antlr/2.7.6/antlr-2.7.6.jar;C:/_MavenLocalRepository/commons-collections/commons-collections/3.1/commons-collections-3.1.jar;C:/_MavenLocalRepository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar;C:/_MavenLocalRepository/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar;C:/_MavenLocalRepository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar;C:/_MavenLocalRepository/javax/transaction/jta/1.1/jta-1.1.jar;C:/_MavenLocalRepository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar;C:/_MavenLocalRepository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar;C:/_MavenLocalRepository/javax/servlet/jstl/1.2/jstl-1.2.jar;C:/_MavenLocalRepository/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar;C:/_MavenLocalRepository/org/hsqldb/hsqldb/2.3.2/hsqldb-2.3.2.jar;C:/_MavenLocalRepository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar;C:/_MavenLocalRepository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar;C:/_MavenLocalRepository/mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar;C:/_MavenLocalRepository/net/sourceforge/jtds/jtds/1.2.8/jtds-1.2.8.jar;C:/_MavenLocalRepository/org/eclipse/jetty/jetty-websocket/8.1.15.v20140411/jetty-websocket-8.1.15.v20140411.jar;C:/_MavenLocalRepository/org/eclipse/jetty/jetty-util/8.1.15.v20140411/jetty-util-8.1.15.v20140411.jar;C:/_MavenLocalRepository/org/eclipse/jetty/jetty-io/8.1.15.v20140411/jetty-io-8.1.15.v20140411.jar;C:/_MavenLocalRepository/org/eclipse/jetty/jetty-http/8.1.15.v20140411/jetty-http-8.1.15.v20140411.jar</Set>
+		</New>
+	</Set><!--Extra Options -->
+	<Set name="stopAtShutdown">true</Set>
+	<Set name="sendServerVersion">true</Set>
+	<Set name="sendDateHeader">true</Set>
+	<Set name="dumpAfterStart">false</Set>
+	<Set name="dumpBeforeStop">false</Set>
+</Configure>

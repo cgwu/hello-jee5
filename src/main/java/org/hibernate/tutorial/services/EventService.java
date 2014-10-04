@@ -29,7 +29,7 @@ public class EventService {
 		try {
 			Event e = new Event();
 //			e.setId(2L);
-			e.setTitle(null);
+			e.setTitle(theEvent.getTitle()+"2");
 			e.setDate(new Date());
 			hibernateTemplate.save(e);
 		} catch (Exception e) {
