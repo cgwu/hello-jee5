@@ -12,7 +12,7 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<struts.version>2.3.16</struts.version>
+		<struts.version>2.3.16.3</struts.version>
    		<hibernate.version>3.6.10.Final</hibernate.version>
    		<spring.version>3.2.11.RELEASE</spring.version>
    		<jetty.version>8.1.15.v20140411</jetty.version>
@@ -245,7 +245,7 @@
 				<version>2.4</version>
 				<configuration>
 					<!-- http://maven.apache.org/plugins/maven-war-plugin/faq.html#attached -->
-					<archiveClasses>true</archiveClasses>
+					<archiveClasses>false</archiveClasses>
 					<!--
 					<packagingExcludes>
 			            WEB-INF/lib/commons-logging-*.jar,
