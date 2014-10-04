@@ -162,7 +162,7 @@
 		<url-pattern>/setLocale</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
+	<!-- <servlet>
         <servlet-name>WebSocket</servlet-name>
         <servlet-class>com.cg.webSocketServlets.WebSocketChatServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
@@ -170,7 +170,18 @@
     <servlet-mapping>
         <servlet-name>WebSocket</servlet-name>
         <url-pattern>/ws/*</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
+
+	<servlet>
+		<servlet-name>WSChat</servlet-name>
+		<servlet-class>com.acme.WebSocketChatServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WSChat</servlet-name>
+		<url-pattern>/ws/*</url-pattern>
+	</servlet-mapping>
     
 	<servlet>
 		<servlet-name>MyServlet</servlet-name>
@@ -221,6 +232,7 @@
 	
 	<welcome-file-list>
 		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>
