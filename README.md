@@ -37,3 +37,42 @@ Unfortunately, you cannot use this servlet context in your web.xml to set the te
 the deployment process to affect this settings (in other words ... the webapp has already been unpacked into the temp directory before this context attribute
  is even read)
 
+
+<!-- jetty 实验成功-->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<configuration>
+					<!-- 每n秒扫描项目的文件改动，包括java类文件;若为0，一改动保存则重启jetty  -->
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<stopPort>9999</stopPort>
+					<webApp>
+						<contextPath>/hello-jee5</contextPath>
+					</webApp>
+					<!-- 指定额外需要监控变化的文件或文件夹，主要用于热部署中的识别文件更新 -->  
+                    <!-- <scanTargetPatterns>  
+                        <scanTargetPattern>  
+                            <directory>src</directory>  
+                            <includes>  
+                                <include>**/*.java</include>  
+                                <include>**/*.properties</include>  
+                            </includes>
+							<excludes>
+								<exclude>**/*.xml</exclude>
+								<exclude>**/myspecial.properties</exclude>
+							</excludes> 
+                        </scanTargetPattern>  
+                    </scanTargetPatterns> -->  
+					 <connectors>
+				       <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+				       		<!-- 配置 jetty启动端口，或 mvn jetty:run -Djetty.port=1111 -->
+				          <port>3333</port>
+				          <maxIdleTime>60000</maxIdleTime>
+				       </connector>
+				     </connectors>
+				     <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
+				</configuration>
+			</plugin>  
+			
+
