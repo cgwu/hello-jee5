@@ -21,7 +21,7 @@ public class EventAction extends ActionSupport {
 	public String add() {
 		if (isPost()) {
 			eventService.addOne(model);
-			msg = "已提交";
+			msg = "已提交了!@@@$$$";
 		}
 		return "add";
 	}
