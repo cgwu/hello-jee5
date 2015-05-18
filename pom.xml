@@ -14,8 +14,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<struts.version>2.3.16.3</struts.version>
    		<hibernate.version>3.6.10.Final</hibernate.version>
-   		<spring.version>3.2.11.RELEASE</spring.version>
+		<spring.version>3.2.11.RELEASE</spring.version>
    		<jetty.version>8.1.15.v20140411</jetty.version>
+   		<activiti-version>5.15.1</activiti-version>
 	</properties>
 
 	<dependencies>
@@ -129,6 +130,28 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- activiti工作流 -->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+			<version>${activiti-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+			<version>${activiti-version}</version>
+		</dependency>
+		 
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.3.168</version>
 		</dependency>
 		<!-- provided -->
 		<dependency>
