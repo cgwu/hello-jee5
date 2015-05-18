@@ -20,6 +20,14 @@ public class TestBookOrder {
 
 	@Test
 	public void test() {
+		/*
+		 * This creates a new process engine with all the defaults to connect to
+		 * a remote h2 database (jdbc:h2:tcp://localhost/activiti) in standalone
+		 * mode. Standalone mode means that Activiti will manage the
+		 * transactions on the JDBC connections that it creates. One transaction
+		 * per service method. For a description of how to write the
+		 * configuration files, see the userguide.
+		 */
 		ProcessEngine processEngine = ProcessEngineConfiguration
 				.createStandaloneProcessEngineConfiguration().buildProcessEngine();
 		
@@ -28,7 +36,7 @@ public class TestBookOrder {
 		IdentityService identityService = processEngine.getIdentityService();
 		TaskService taskService = processEngine.getTaskService();
 		
-		repositoryService.createDeployment().addClasspathResource("diagrams/bookorder.bpmm").deploy();
+		repositoryService.createDeployment().addClasspathResource("diagrams/bookorder.bpmn").deploy();
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		variableMap.put("isbn", "123456");
 		identityService.setAuthenticatedUserId("kermit");
@@ -38,7 +46,7 @@ public class TestBookOrder {
 		List<Task> taskList = taskService.createTaskQuery().taskCandidateUser("kermit").list();
 		assertEquals(1, taskList.size());
 		System.out.println("found task " + taskList.get(0).getName());
-		taskService.complete(taskList.get(0).getId());
+		//taskService.complete(taskList.get(0).getId());
 	}
 
 }
