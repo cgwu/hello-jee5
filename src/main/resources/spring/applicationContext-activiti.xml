@@ -48,4 +48,7 @@
 		factory-method="getHistoryService" />
 	<bean id="managementService" factory-bean="processEngine"
 		factory-method="getManagementService" />
+		
+	<!-- 验证order的ServiceTask -->
+	<bean id="order" class="activitiInAction.services.OrderService" />
 </beans>
