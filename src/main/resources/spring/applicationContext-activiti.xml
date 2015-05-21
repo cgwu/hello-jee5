@@ -34,6 +34,7 @@
 		<property name="deploymentResources"
 			value="classpath*:diagrams/*.bpmn" />
 		<property name="jobExecutorActivate" value="false" />
+		<property name="history" value="full"></property>
 	</bean>
 	<bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
 		<property name="processEngineConfiguration" ref="processEngineConfiguration" />

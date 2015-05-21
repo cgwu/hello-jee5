@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.bpmnwithactiviti.org">
+	<process id="loanrequest" name="Process to handle a loan request">
+		<startEvent id="theStart" />
+		<sequenceFlow sourceRef="theStart" targetRef="checkCredit" />
+		<scriptTask id="checkCredit" scriptFormat="groovy">
+			<script>
+				out:println "Checking credit for " + name;
+				creditCheckOk = false;
+				if((income/2) > loanAmount) {
+					creditCheckOk = true;
+				}
+				out:println "Check credit for " + name + " outcome is " + creditCheckOk;
+				execution.setVariable("creditCheckOk",creditCheckOk);
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="checkCredit" targetRef="createApplication" />
+		<serviceTask id="createApplication" activiti:class="activitiInAction.services.CreateApplicationTask" />
+		<sequenceFlow sourceRef="createApplication" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>
