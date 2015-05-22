@@ -16,7 +16,8 @@
 		<property name="targetDataSource">
 			<bean class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
 				<property name="driverClass" value="org.h2.Driver" />
-				<property name="url" value="jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000" />
+				<!-- <property name="url" value="jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000" /> -->
+				<property name="url" value="jdbc:h2:tcp://localhost/activiti;DB_CLOSE_DELAY=1000" />
 				<property name="username" value="sa" />
 				<property name="password" value="" />
 			</bean>
@@ -32,9 +33,16 @@
 		<property name="transactionManager" ref="h2TransactionManager" />
 		<property name="databaseSchemaUpdate" value="true" />
 		<property name="deploymentResources"
-			value="classpath*:diagrams/*.bpmn" />
-		<property name="jobExecutorActivate" value="false" />
+			value="classpath*:/diagrams/*.bpmn20.xml" />
+		<property name="jobExecutorActivate" value="true" />
 		<property name="history" value="full"></property>
+		<!--邮件服务器配置 -->
+        <property name="mailServerHost" value="smtp.163.com" />
+        <property name="mailServerPort" value="25"/>
+        <property name="mailServerDefaultFrom" value="superwcg@163.com" />
+        <property name="mailServerUsername" value="superwcg" />
+        <property name="mailServerPassword" value="hjkl123hjkl" />
+        <property name="mailServerUseSSL" value="true" />
 	</bean>
 	<bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
 		<property name="processEngineConfiguration" ref="processEngineConfiguration" />

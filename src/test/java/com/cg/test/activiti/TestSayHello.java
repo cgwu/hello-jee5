@@ -17,10 +17,10 @@ public class TestSayHello {
 				.createStandaloneInMemProcessEngineConfiguration().buildProcessEngine();
 		RuntimeService runtimeService = processEngine.getRuntimeService();
 		RepositoryService repositoryService = processEngine.getRepositoryService();
-		repositoryService.createDeployment().addClasspathResource("diagrams/sayhello.bpmn")
+		repositoryService.createDeployment().addClasspathResource("diagrams/sayhello.bpmn20.xml")
 				.deploy();
 		ProcessInstance processInstance = runtimeService
-				.startProcessInstanceByKey("helloworld");
+				.startProcessInstanceByKey("sayhello");
 		assertNotNull(processInstance.getId());
 		System.out.println("id " + processInstance.getId() + " "
 				+ processInstance.getProcessDefinitionId());

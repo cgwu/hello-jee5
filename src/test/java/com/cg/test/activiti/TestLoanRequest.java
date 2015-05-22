@@ -46,7 +46,7 @@ public class TestLoanRequest {
 	 * be available for every test method.
 	 */
 	@Test
-	@Deployment(resources = { "diagrams/loanrequest.bpmn" })
+	@Deployment(resources = { "diagrams/loanrequest.bpmn20.xml" })
 	public void creditCheckTrue() {
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		variableMap.put("name", "Miss Piggy");

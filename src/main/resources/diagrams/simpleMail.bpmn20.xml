@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions 
+  xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:activiti="http://activiti.org/bpmn"
+  targetNamespace="http://www.bpmnwithactiviti.org/email">
+  
+  <process id="simpleEmailProcess" >
+    <startEvent id="theStart" />
+    <sequenceFlow sourceRef="theStart" targetRef="sendMail" />
+    <serviceTask id="sendMail" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="to" stringValue="superwcg@qq.com" />
+        <activiti:field name="cc" stringValue="gg.wcg@qq.com" />
+        <activiti:field name="subject" expression="喂, ${name}" />
+        <activiti:field name="charset" stringValue="utf-8" />
+        <activiti:field name="html">
+          <activiti:expression>
+            <![CDATA[
+              <html>
+                <body>
+                  你好: ${name},<br/><br/>
+                  Your loan request has been denied.<br/><br/>
+              	  Kind regards,<br/>
+                  The Loan Sharks Company.
+                </body>
+              </html>
+            ]]>
+          </activiti:expression>
+        </activiti:field>       
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow sourceRef="sendMail" targetRef="theEnd" />
+    <endEvent id="theEnd" />
+  </process>
+
+</definitions>
