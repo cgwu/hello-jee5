@@ -11,10 +11,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.context.WebApplicationContext;
 
-import struts2InAction.services.UserService;
+//import struts2InAction.services.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:/spring/applicationContext.xml"})
+//@ContextConfiguration(locations={"classpath:/spring/applicationContext*.xml"})
+@ContextConfiguration(locations={
+		"classpath:/spring/applicationContext.xml",
+		"classpath:/spring/applicationContext-mybatis3.xml"
+})
 @WebAppConfiguration
 public class TestConfig extends AbstractJUnit4SpringContextTests {
 
